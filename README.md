@@ -2,6 +2,7 @@
 
 A tool that allows you to resolve Steam user ID with only username present.
 SteamCMD is needed for this process.
+Also thanks to https://github.com/Ashesh3 for help.
 
 # Trademark Legal Notice
 
