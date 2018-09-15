@@ -315,11 +315,11 @@ namespace SteamIDResolverGUI.Async
 
             ChangeState(owner, "Starting..");
 
-            while (!steamCmdStarted) {}
+            SpinWait.SpinUntil(() => steamCmdStarted);
 
             ChangeState(owner, "Resolving..");
 
-            while (!loginFailed) {}
+            SpinWait.SpinUntil(() => loginFailed);
 
             ChangeState(owner, "Parsing..");
 

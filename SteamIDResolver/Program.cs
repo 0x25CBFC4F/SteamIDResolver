@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace SteamIDResolver
 {
@@ -68,11 +69,11 @@ namespace SteamIDResolver
             steamCmdProcess.Start();
             steamCmdProcess.BeginOutputReadLine();
 
-            while (!steamCmdStarted) {}
+            SpinWait.SpinUntil(() => steamCmdStarted);
 
             Log($"SteamCMD started. Resolving username [{login}]..", ConsoleColor.Green);
 
-            while (!loginFailed) {}
+            SpinWait.SpinUntil(() => loginFailed);
 
             Log("Resolving complete. Parsing..");
 
