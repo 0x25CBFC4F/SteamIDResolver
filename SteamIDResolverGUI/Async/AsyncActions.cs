@@ -293,8 +293,6 @@ namespace SteamIDResolverGUI.Async
             {
                 if (string.IsNullOrEmpty(eventArgs.Data)) return;
 
-                File.AppendAllText("./dump.bin", $"{eventArgs.Data}\n");
-
                 if (eventArgs.Data.Normalize().StartsWith("Loading Steam API...OK.", true, CultureInfo.InvariantCulture))
                 {
                     steamCmdStarted = true;
