@@ -221,7 +221,10 @@ namespace SteamIDResolverGUI.Async
                 return;
             }
 
-            if (response != DialogResult.No) return;
+            if (response != DialogResult.No)
+            {
+                Environment.Exit(0); // TODO: Can DialogResult can even be not 'DialogResult.No' at this point?
+            }
 
             var selectFileDialog = new OpenFileDialog
             {
